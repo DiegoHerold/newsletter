@@ -1,0 +1,211 @@
+@font-face {
+    font-family:'Roboto';
+    src: url(assets/fonts/Roboto-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto;
+    src: url(assets/fonts/Roboto-Bold.ttf);
+    font-weight: 700;
+    font-style: bold;
+}
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--Charcoal-Grey);
+  }
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 800px;
+    margin: 100px auto 20px auto;
+    padding: 20px;
+    background-color: var(--White);
+    border-radius: 25px;
+  }
+  section:first-child {
+   order: 1;
+  }
+  section:last-child {
+    padding: 30px 0px 30px 20px;
+  }
+  h1 {
+    font-size: 50px;
+    color: var(--Dark-Slate-Grey);
+    margin: 20px 0px 20px 0px;
+  }
+  p {
+    font-size: 16px;
+    color: var(--Dark-Slate-Grey);
+    margin-bottom: 30px;
+  }
+  ul {
+    list-style-image: url(assets/images/icon-list.svg);
+    list-style-position:inside;
+    margin-bottom: 40px;
+  }
+
+  li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label,
+  form p, span {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--Dark-Slate-Grey);
+  }
+
+
+  .error-message {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    color: var(--Tomato);
+  }
+  input {
+    font-size: 16px;
+    line-height: 48px;
+    color: var(--Grey);
+    padding-left: 20px;
+    border: 1px solid var(--Grey);
+    border-radius: 5px;
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+
+  input:focus::placeholder {
+    color: transparent;
+  }
+  /* retira o placeholder quando clica */
+
+  input[type="email"]:invalid {
+    border: 1px solid var(--Tomato);
+    background-color: hsl(from var(--Tomato) h s l /10%) !important;
+  }
+
+  input[type="email"]:invalid~.error-message {
+    display: block;
+  }
+
+  button {
+    font-size: 16px;
+    line-height: 48px;
+    border: none;
+    color: var(--White);
+    background-color: var(--Dark-Slate-Grey);
+    border-radius: 5px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: var(--Tomato);
+    box-shadow: 0px 10px 20px 0px var(--Tomato);
+  }
+
+    picture,
+  picture>img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+   /* success message */
+  .success-message-box {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    margin: 100px auto;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    background-color: var(--White);
+    border-radius: 20px;
+  }
+
+  .success-message-box img {
+    width: 15%;
+  }
+
+  .success-message-box h1 {
+    font-size: 40px;
+    margin: 5px 0;
+  }
+
+
+  /* .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  } */
+
+  @media (max-width: 600px) {
+
+    body {
+      margin: 0;
+      background-color: var(--White);
+    }
+
+    main {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      grid-template-columns: 1fr;
+      border-radius: 0;
+
+    }
+
+    section:first-child {
+      order: 0;
+    }
+
+    section:last-child {
+      padding: 30px;
+
+    }
+
+    /* Success message start */
+
+    .success-message-box {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      width: auto;
+      margin: 100px 0;
+      margin-bottom: 20px;
+      padding: 30px 20px;
+    }
+
+    .dismiss{
+      margin-top: 200px;
+    }
+  }
+  
