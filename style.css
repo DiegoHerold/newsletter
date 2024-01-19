@@ -73,12 +73,15 @@
   }
 
   label,
-  form p, span {
+  form p{
     font-size: 12px;
     font-weight: bold;
     color: var(--Dark-Slate-Grey);
   }
-
+  span{
+    font-size: 16px;
+    font-weight: bold;
+  }
 
   .error-message {
     display: none;
